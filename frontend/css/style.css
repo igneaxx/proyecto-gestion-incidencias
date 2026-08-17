@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f4f7;
+  color: #1f2933;
+}
+
+.contenedor-login {
+  max-width: 380px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contenedor-login h1 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.contenedor-login p.subtitulo {
+  color: #6b7280;
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 9px 10px;
+  margin-bottom: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn-primario {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+}
+
+.btn-primario:hover {
+  background: #1d4ed8;
+}
+
+.mensaje-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: none;
+}
+
+.credenciales-demo {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #6b7280;
+  background: #f9fafb;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Dashboard */
+.barra-superior {
+  background: #1f2933;
+  color: white;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barra-superior .usuario-info {
+  font-size: 13px;
+}
+
+.barra-superior button {
+  background: #ef4444;
+  color: white;
+}
+
+.contenido {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.panel {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.panel h2 {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.fila-form {
+  display: flex;
+  gap: 12px;
+}
+
+.fila-form > div {
+  flex: 1;
+}
+
+.tabla-incidencias {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tabla-incidencias th, .tabla-incidencias td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.estado-badge {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+}
+
+.estado-abierta { background: #f59e0b; }
+.estado-en_proceso { background: #3b82f6; }
+.estado-cerrada { background: #10b981; }
+
+.acciones-admin select, .acciones-admin button {
+  margin: 0 2px;
+  padding: 4px 6px;
+  font-size: 12px;
+  width: auto;
+}
+
+.mensaje-exito {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  display: none;
+}

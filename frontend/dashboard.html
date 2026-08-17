@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel - Gestion de Incidencias</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="barra-superior">
+    <div>Sistema de Gestion de Incidencias</div>
+    <div class="usuario-info">
+      <span id="nombreUsuario"></span> (<span id="rolUsuario"></span>)
+      <button id="btnSalir">Cerrar sesion</button>
+    </div>
+  </div>
+
+  <div class="contenido">
+    <div class="panel">
+      <h2>Reportar nueva incidencia</h2>
+      <div class="mensaje-error" id="mensajeErrorForm"></div>
+      <div class="mensaje-exito" id="mensajeExitoForm"></div>
+      <form id="formIncidencia">
+        <label for="titulo">Titulo</label>
+        <input type="text" id="titulo" required>
+
+        <label for="descripcion">Descripcion</label>
+        <textarea id="descripcion" rows="3" required></textarea>
+
+        <div class="fila-form">
+          <div>
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad">
+              <option value="baja">Baja</option>
+              <option value="media" selected>Media</option>
+              <option value="alta">Alta</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primario">Registrar incidencia</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Incidencias</h2>
+      <div class="mensaje-error" id="mensajeErrorTabla"></div>
+      <table class="tabla-incidencias">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Titulo</th>
+            <th>Prioridad</th>
+            <th>Estado</th>
+            <th>Ubicacion</th>
+            <th>Fecha</th>
+            <th id="colAcciones"></th>
+          </tr>
+        </thead>
+        <tbody id="cuerpoTabla"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

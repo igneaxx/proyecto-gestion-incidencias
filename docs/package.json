@@ -1,0 +1,9 @@
+{
+  "name": "generador-reporte",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Script auxiliar para generar el reporte final en Word (.docx)",
+  "dependencies": {
+    "docx": "^9.1.1"
+  }
+}

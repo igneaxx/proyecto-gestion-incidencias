@@ -1,0 +1,5 @@
+node_modules/
+*.log
+backend/data/db.json
+docs/node_modules/
+~$*
