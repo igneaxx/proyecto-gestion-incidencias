@@ -6,6 +6,8 @@ y consultar su estado; los administradores pueden actualizar y cerrar incidencia
 
 **Equipo:** Sanchez Reyes Aylin Magdalena, Chavez Urbina Luis Alfonso — Grupo IDSW31
 
+**Repositorio:** https://github.com/igneaxx/proyecto-gestion-incidencias
+
 ## Stack tecnologico
 
 - **Backend:** Node.js + Express, JWT para autenticacion, bcryptjs para hash de
