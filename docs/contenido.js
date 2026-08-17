@@ -10,7 +10,8 @@ module.exports = {
       "Chavez Urbina Luis Alfonso"
     ],
     grupo: "IDSW31",
-    fecha: "15 de agosto de 2026"
+    fecha: "15 de agosto de 2026",
+    repositorio: "https://github.com/igneaxx/proyecto-gestion-incidencias"
   },
 
   introduccion:

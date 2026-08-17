@@ -3,7 +3,7 @@ const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow,
   TableCell, WidthType, ImageRun, AlignmentType, BorderStyle, PageBreak,
-  ShadingType
+  ShadingType, ExternalHyperlink
 } = require("docx");
 
 const c = require("./contenido");
@@ -43,6 +43,27 @@ function imageParagraph(relPath, maxWidth, caption) {
     }));
   }
   return children;
+}
+
+function hyperlinkParagraph(url, label, opts = {}) {
+  return new Paragraph({
+    alignment: opts.alignment || AlignmentType.LEFT,
+    spacing: opts.spacing || { before: 100, after: 160 },
+    children: [
+      new ExternalHyperlink({
+        link: url,
+        children: [
+          new TextRun({
+            text: label || url,
+            style: "Hyperlink",
+            color: "1155CC",
+            underline: {},
+            size: opts.size || 21
+          })
+        ]
+      })
+    ]
+  });
 }
 
 function h1(text) {
@@ -129,6 +150,16 @@ sections.push(
     spacing: { before: 100 },
     children: [new TextRun({ text: `Fecha: ${c.portada.fecha}`, size: 22 })]
   }),
+  new Paragraph({
+    alignment: AlignmentType.CENTER,
+    spacing: { before: 100 },
+    children: [new TextRun({ text: "Repositorio de codigo:", size: 22 })]
+  }),
+  hyperlinkParagraph(c.portada.repositorio, c.portada.repositorio, {
+    alignment: AlignmentType.CENTER,
+    spacing: { before: 40 },
+    size: 22
+  }),
   new Paragraph({ children: [new PageBreak()] })
 );
 
@@ -193,9 +224,10 @@ sections.push(p(
   "acceso por rol y consumo de la API externa ipwho.is) y un frontend en HTML/CSS/JS " +
   "que consume dichos endpoints. A continuacion se muestran capturas de la ejecucion " +
   "real del sistema. El codigo fuente completo, con estructura organizada por capas " +
-  "(routes, middleware, data) y su README con instrucciones de ejecucion, se entrega " +
-  "junto a este reporte en la carpeta del proyecto."
+  "(routes, middleware, data) y su README con instrucciones de ejecucion, esta " +
+  "publicado en el siguiente repositorio:"
 ));
+sections.push(hyperlinkParagraph(c.portada.repositorio, c.portada.repositorio));
 
 sections.push(h2("Pantalla de inicio de sesion"));
 sections.push(...imageParagraph("evidencias/01_login.png", 420, "Figura 2. Login del sistema"));
